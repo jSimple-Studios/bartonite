@@ -436,6 +436,7 @@ MonoBehaviour:
   yPrev: 0
   isGrounded: 0
   jumpSpeed: 5
+  height: 1.09
 --- !u!114 &4328403359920951250
 MonoBehaviour:
   m_ObjectHideFlags: 0

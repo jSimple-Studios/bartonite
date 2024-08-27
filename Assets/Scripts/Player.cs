@@ -19,6 +19,7 @@ public class Player : NetworkBehaviour
     public bool isGrounded;
     public float jumpSpeed;
     public float height;
+    bool jumpGo;
 
     void Start() {
         cam = GetComponentInChildren<Camera>().gameObject;
@@ -72,6 +73,11 @@ public class Player : NetworkBehaviour
             isGrounded = false;
             print("jump cast missed");
         }
+        if (isGrounded && jumpGo) {
+            yVel = jumpSpeed;
+            // print("Jump!");
+            isGrounded = false;
+        }
     }
 
     public void OnMovementX(InputAction.CallbackContext value)
@@ -87,10 +93,8 @@ public class Player : NetworkBehaviour
     }
 
     public void OnJump(InputAction.CallbackContext value){
-        if (isGrounded) {
-            yVel = jumpSpeed;
-            // print("Jump!");
-            isGrounded = false;
-        }
+        // print(value.ReadValue<float>());
+        if (value.ReadValue<float>() == 0) jumpGo = false;
+        else jumpGo = true;
     }
 }
