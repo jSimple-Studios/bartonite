@@ -441,12 +441,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ellipsoidOverride: {fileID: 0}
   _originAuthority: 1
-  _latitude: 42.728632257656926
-  _longitude: -73.6742154445945
-  _height: 51.59210740133405
-  _ecefX: 1319054.875003725
-  _ecefY: -4503291.861193478
-  _ecefZ: 4305440.576110725
+  _latitude: 42.728604399312616
+  _longitude: -73.67423701817378
+  _height: 71.51815294805476
+  _ecefX: 1319057.884136313
+  _ecefY: -4503308.420057496
+  _ecefZ: 4305451.823141143
   _scale: 1
 --- !u!4 &819515654
 Transform:
@@ -459,7 +459,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 161818295}
   - {fileID: 2014025619}
@@ -896,173 +896,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1955649086
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7752603225714643755, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_text
-      value: "Welcome to Cesium for Unity! Cesium for Unity enables the 3D geospatial
-        ecosystem in Unity with a full-scale globe and high-resolution 3D geospatial
-        content like photogrammetry, terrain, and imagery.\r\n\r\nThis Cesium for
-        Unity Samples project is set up to get you started with creating global-scale
-        simulations, apps, and games. \r\n\r\nThis first level shows the basic components
-        that are the foundations of your levels. You will notice an object \"Cesium\"
-        in the Hierarchy window. This contains a Cesium Georeference component, which
-        is used to set your current global coordinates.\n\r\nThe \"Cesium\" object
-        contains two children: Cesium World Terrain, a global terrain dataset, and
-        Cesium OSM Buildings, a world-wide 3D buildings layer derived from OpenStreetMap.\r\n\r\nTo
-        get started with your own 3D content, go to \"Cesium/Cesium\" in the menu
-        to sign into your Cesium ion account, or create one for free. Your Cesium
-        ion account includes access to curated global content and high-resolution
-        photogrammetry data.\r\n\r\nClick the play button to explore the world in
-        Unity, then load \"02_CesiumMelbourne\" when you want to explore more types
-        of data.\r\n\r\nPress \"1\" in the editor to return to this view."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _lookAtPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _lookAtPosition.y
-      value: -188
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _lookAtPosition.z
-      value: -1230
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _lookAtRotation.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _lookAtRotation.y
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829094, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: _objectsToEnable.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829112, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Getting Started
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829112, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -247.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -201.00388
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1170.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7631162
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.013320275
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6460256
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.011276446
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -80.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603225896829113, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603227654311266, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 280
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603227654311266, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603227654311266, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7752603227654311266, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7752603225714643757, guid: d1f6fb4b452d026489986bf620a2d8bc,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-  m_SourcePrefab: {fileID: 100100000, guid: d1f6fb4b452d026489986bf620a2d8bc, type: 3}
 --- !u!1 &2014025618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,5 +978,4 @@ SceneRoots:
   - {fileID: 1953805415}
   - {fileID: 819515654}
   - {fileID: 410087041}
-  - {fileID: 1955649086}
   - {fileID: 1160557883}
