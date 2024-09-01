@@ -40,6 +40,7 @@ public class Player : NetworkBehaviour {
             Cursor.visible = false;
         } else {
             cam.SetActive(false);
+            
         }
         StartCoroutine(GravTimer());
     }
@@ -51,15 +52,17 @@ public class Player : NetworkBehaviour {
 
     void Update() {
         // TODO: server authority
-        if (isLocalPlayer && Application.isFocused) {
-            // rotation
-            // TODO: allow for controller input as well
-            mouseDelta = Mouse.current.delta.ReadValue();
-            rotation.y += mouseDelta.x * sensitivity;
-            rotation.x -= mouseDelta.y * sensitivity;
-            rotation.x = Mathf.Clamp(rotation.x, -90, 90);
-            transform.localEulerAngles = new Vector3(0, rotation.y, 0);
-            cam.transform.localEulerAngles = new Vector3(rotation.x, 0, 0);
+        if (isLocalPlayer) {
+            if (Application.isFocused) {
+                // rotation
+                // TODO: allow for controller input as well
+                mouseDelta = Mouse.current.delta.ReadValue();
+                rotation.y += mouseDelta.x * sensitivity;
+                rotation.x -= mouseDelta.y * sensitivity;
+                rotation.x = Mathf.Clamp(rotation.x, -90, 90);
+                transform.localEulerAngles = new Vector3(0, rotation.y, 0);
+                cam.transform.localEulerAngles = new Vector3(rotation.x, 0, 0);
+            }
 
             // gravity
             if (doGrav && !flight) yVel += gm.sceneGravity * Time.deltaTime;
