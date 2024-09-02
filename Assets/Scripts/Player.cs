@@ -116,14 +116,11 @@ public class Player : NetworkBehaviour {
             if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, height, layerMask)) {
                 isGrounded = true;
                 gliding = false;
-                // print("jump cast hit");
             } else {
                 isGrounded = false;
-                // print("jump cast missed");
             }
             if (isGrounded && jumpGo) {
                 yVel = jumpSpeed;
-                // print("Jump!");
                 isGrounded = false;
             }
         } else {
@@ -131,9 +128,11 @@ public class Player : NetworkBehaviour {
         }
         if (isLocalPlayer) {
             // update ui
-            if (charge < 5) {
+            if (charge < 5 && charge >= 0) {
                 gm.charge.texture = Resources.Load<Texture>("charge-" + charge);
                 gm.ultText.SetActive(false);
+            } else if (charge < 0) {
+                gm.charge.texture = Resources.Load<Texture>("charge-" + 0);
             } else { 
                 gm.charge.texture = Resources.Load<Texture>("charge-" + 5);
                 gm.ultText.SetActive(true);
@@ -190,16 +189,22 @@ public class Player : NetworkBehaviour {
         }
     }
 
-    IEnumerator IReGlide() {
-        // split server and client side of this to prevent charge lock after reglide
+    [Client] IEnumerator IReGlide() {
         yVel = reGlideSpeed;
         for (int i = 0; i < 5; i++) {
-            charge--;
+            ChargeMod(-1);
             yield return new WaitForSecondsRealtime(.2f);
         }
+        ClearCharge();
         gliding = true;
         yVel = 0;
     }
+
+    [Command] void ChargeMod(int amount) {
+            charge += amount;
+    }
+
+    [Command] void ClearCharge() { charge = 0; } // WHY THE FUCK IS IT NEGATIVE?! FIX THAT SHIT!
 
     void OnTriggerEnter(Collider col) {
         StartCoroutine(IHatCol(col));
