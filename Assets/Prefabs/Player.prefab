@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7903317885068329558}
   - component: {fileID: 1912864582474609310}
   - component: {fileID: 7578579966909421266}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: DynamicCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3690197879217112948}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000067952424, y: 2.4818107e-17, z: -0.0000008694471, w: 1}
-  m_LocalPosition: {x: 9.313226e-10, y: 0.29, z: 0}
+  m_LocalPosition: {x: 0.0000000023283064, y: 0.29, z: 4.656613e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -263,7 +263,7 @@ MonoBehaviour:
       z: 0.7689841458314653
       w: 0
     c3:
-      x: -1292934.5537261737
+      x: -1292934.5537261723
       y: -4740026.31943293
       z: 4056960.336722418
       w: 1
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: -2301693773341934740}
   - component: {fileID: 3314186307721755993}
   - component: {fileID: 3313359433396134404}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -431,13 +431,22 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   speed: 3
+  glideSpeed: 80
   yPrev: 0
   isGrounded: 0
   jumpSpeed: 5
+  reGlideSpeed: 200
   height: 1.2
   vel: {x: 0, y: 0, z: 0}
   flight: 0
   mesh: {fileID: 6853370206613781529}
+  animator: {fileID: 9070587378236299376}
+  gliding: 1
+  charge: 0
+  streak: 0
+  hat: {fileID: 5389884351042807282}
+  health: 5
+  maxhealth: 5
 --- !u!114 &4328403359920951250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +621,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 75f4e97b-8029-4171-b684-bf8465914e1c
     m_ActionName: Movement/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6951284642543677876}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAtkPrim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ae381411-e87e-4aaa-a527-26536bc82614
+    m_ActionName: Movement/AttackPrimary[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6951284642543677876}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAtkSec
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fab6a8af-e6b9-4122-98ef-c9de12482dc7
+    m_ActionName: Movement/AttackSecondary[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6951284642543677876}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnReGlide
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bae65efb-9ac5-48c6-aeca-d7133ca4c45b
+    m_ActionName: Movement/ReGlide[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
@@ -709,8 +766,49 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d927a3bc591218d439291025e520ea68,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5217640753042906749}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d927a3bc591218d439291025e520ea68,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9070587378236299376}
+    - targetCorrespondingSourceObject: {fileID: 1806455235375228090, guid: d927a3bc591218d439291025e520ea68,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5588606892665529036}
   m_SourcePrefab: {fileID: 100100000, guid: d927a3bc591218d439291025e520ea68, type: 3}
+--- !u!1 &5389884351042807282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1806455235375228090, guid: d927a3bc591218d439291025e520ea68,
+    type: 3}
+  m_PrefabInstance: {fileID: 6043098655026086216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &5588606892665529036
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5389884351042807282}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 60
+  m_Height: 250
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &6077571726748018339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d927a3bc591218d439291025e520ea68,
@@ -723,3 +821,41 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6043098655026086216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5217640753042906749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853370206613781529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 1
+  syncMode: 0
+  syncInterval: 0
+  clientAuthority: 1
+  animator: {fileID: 9070587378236299376}
+--- !u!95 &9070587378236299376
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6853370206613781529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 70fdf51aea5822e4b8852684a7bcb99d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

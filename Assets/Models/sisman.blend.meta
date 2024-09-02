@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: dead
+      name: idle
       takeName: Scene
       internalID: -623603649343465320
       firstFrame: 1
-      lastFrame: 45
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
